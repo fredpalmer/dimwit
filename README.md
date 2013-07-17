@@ -7,7 +7,7 @@ Dynamic Image Manipulation Service with Nginx
 Features
 =========
 Uses the [HttpImageFilterModule](http://wiki.nginx.org/HttpImageFilterModule) to dynamically process remote images into cropped, rotated and resized derivatives based on remote source images.
-Derivative images are created only once per unique url and stored locally.  Subsequent requests are served directly from disk.
+Derivative images are created only once per unique url and stored locally.  Duplicate requests are served directly from disk.
 
 
 Setup (using Ubuntu)
