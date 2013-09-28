@@ -22,8 +22,6 @@ mkdir /mnt/media/   # Or whatever you want the server root to be
 sudo chown ubuntu:ubuntu /mnt/media
 chmod 777 /mnt/media
 
-sudo apt-get update
-sudo apt-get upgrade -y
 sudo apt-get install nginx-extras-dbg
 # if you get an error uncomment the offending lines in this file and try to reinstall nginx again
 # sudo vim /etc/apt/sources.list
