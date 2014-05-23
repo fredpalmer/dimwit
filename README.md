@@ -26,7 +26,7 @@ sudo apt-get install nginx-extras-dbg
 # if you get an error uncomment the offending lines in this file and try to reinstall nginx again
 # sudo vim /etc/apt/sources.list
 
-curl -O https://raw.github.com/fredpalmer/dimwit/develop/nginx.conf
+curl -O https://raw.githubusercontent.com/fredpalmer/dimwit/develop/nginx.conf
 sudo mv nginx.conf /etc/nginx/sites-enabled/
 sudo /etc/init.d/nginx restart
 ```
