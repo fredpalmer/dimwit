@@ -18,7 +18,7 @@ Nothing special except you need ports 22 (to login via ssh) and 8080 to run the 
 
 ``` bash
 # When you log into the server from the terminal run these commands
-mkdir /mnt/media/   # Or whatever you want the server root to be
+sudo mkdir /mnt/media/   # Or whatever you want the server root to be
 sudo chown ubuntu:ubuntu /mnt/media
 chmod 777 /mnt/media
 
