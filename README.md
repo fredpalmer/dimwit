@@ -9,40 +9,28 @@ Features
 Uses the [HttpImageFilterModule](http://wiki.nginx.org/HttpImageFilterModule) to dynamically process remote images into cropped, rotated and resized derivatives based on remote source images.
 Derivative images are created only once per unique url and stored locally.  Duplicate requests are served directly from disk.
 
-
-Setup (using Ubuntu)
-=======
-1.  Launch a server, e.g. *Ubuntu Server 12.04.2 LTS*
-
-Nothing special except you need ports 22 (to login via ssh) and 8080 to run the service.
-
-``` bash
-# When you log into the server from the terminal run these commands
-sudo mkdir /mnt/media/   # Or whatever you want the server root to be
-sudo chown ubuntu:ubuntu /mnt/media
-chmod 777 /mnt/media
-
-sudo apt-get install nginx-extras-dbg
-# if you get an error uncomment the offending lines in this file and try to reinstall nginx again
-# sudo vim /etc/apt/sources.list
-
-curl -O https://raw.githubusercontent.com/fredpalmer/dimwit/develop/nginx.conf
-sudo mv nginx.conf /etc/nginx/sites-enabled/
-sudo /etc/init.d/nginx restart
+Setup
+=====
+Just run the docker container asgoodasnew/dimwit with Port 80:
+```
+docker run -d -p 80:80 asgoodasnew/dimwit
 ```
 
-You should be running now.
+You can also mount /mnt/media to the host, make sure www-data does have write-permissions:
 
+```
+docker run -d -p 80:80 -v /imagedata:/mnt/media asgoodasnew/dimwit
+```
 
 Usage
 =======
 ```
 # resize example
-http://<dims-host>:8080/resize/100x100/http://2.bp.blogspot.com/_nm9ySucveA8/TEYgGu9DIgI/AAAAAAAAAO4/XI1q38FFlxw/s1600/unicorns2q.jpg
+http://<dims-host>/resize/100x100/http://2.bp.blogspot.com/_nm9ySucveA8/TEYgGu9DIgI/AAAAAAAAAO4/XI1q38FFlxw/s1600/unicorns2q.jpg
 
 # crop example
-http://<dims-host>:8080/crop/200x200/http://4.bp.blogspot.com/_nm9ySucveA8/TEYgGSJi7sI/AAAAAAAAAOw/XK4VjrHPybw/s1600/unicorns-5-magical-animal.jpg
+http://<dims-host>/crop/200x200/http://4.bp.blogspot.com/_nm9ySucveA8/TEYgGSJi7sI/AAAAAAAAAOw/XK4VjrHPybw/s1600/unicorns-5-magical-animal.jpg
 
 # rotate example
-http://<dims-host>:8080/rotate/90/http://3.bp.blogspot.com/_nm9ySucveA8/TEYgGF9iEWI/AAAAAAAAAOo/uC62nczWcEk/s1600/unicorn1.jpg
+http://<dims-host>/rotate/90/http://3.bp.blogspot.com/_nm9ySucveA8/TEYgGF9iEWI/AAAAAAAAAOo/uC62nczWcEk/s1600/unicorn1.jpg
 ```
