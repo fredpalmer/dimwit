@@ -12,9 +12,7 @@ Derivative images are created only once per unique url and stored locally.  Dupl
 
 Setup (using Ubuntu)
 =======
-1.  Launch a server, e.g. *Ubuntu Server 14.04 LTS*
-
-Nothing special except you need ports 22 (to login via ssh) and 8080 to run the service.
+1.  Launch a server, e.g. *Ubuntu Server 14.04 LTS*.  Nothing special except you need ports 22 (to login via ssh) and 8080 to run the service.
 
 2. SSH into the machine and run the following commands:
 
