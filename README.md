@@ -6,15 +6,17 @@ Dynamic Image Manipulation Service with Nginx
 
 Features
 =========
-Uses the [HttpImageFilterModule](http://wiki.nginx.org/HttpImageFilterModule) to dynamically process remote images into cropped, rotated and resized derivatives based on remote source images.
+Uses the [HttpImageFilterModule](http://nginx.org/en/docs/http/ngx_http_image_filter_module.html) to dynamically process remote images into cropped, rotated and resized derivatives based on remote source images.
 Derivative images are created only once per unique url and stored locally.  Duplicate requests are served directly from disk.
 
 
 Setup (using Ubuntu)
 =======
-1.  Launch a server, e.g. *Ubuntu Server 12.04.2 LTS*
+1.  Launch a server, e.g. *Ubuntu Server 14.04 LTS*
 
 Nothing special except you need ports 22 (to login via ssh) and 8080 to run the service.
+
+2. SSH into the machine and run the following commands:
 
 ``` bash
 # When you log into the server from the terminal run these commands
@@ -30,9 +32,7 @@ curl -O https://raw.githubusercontent.com/fredpalmer/dimwit/develop/nginx.conf
 sudo mv nginx.conf /etc/nginx/sites-enabled/
 sudo /etc/init.d/nginx restart
 ```
-
-You should be running now.
-
+*That's it!*
 
 Usage
 =======
