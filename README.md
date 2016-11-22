@@ -32,15 +32,28 @@ sudo /etc/init.d/nginx restart
 ```
 *That's it!*
 
+
+Setup (using Docker)
+=====
+
+Just run the docker container ondra42/dimwit with Port 80:
+```
+docker run -d -p 8080:80 ondrejp/dimwit
+```
+
+```
+docker run -d -p 8080:80 ondrejp/dimwit
+```
+
 Usage
 =======
 ```
 # resize example
-http://<dims-host>:8080/resize/100x100/http://2.bp.blogspot.com/_nm9ySucveA8/TEYgGu9DIgI/AAAAAAAAAO4/XI1q38FFlxw/s1600/unicorns2q.jpg
+http://<dims-host>/resize/100x100/http://2.bp.blogspot.com/_nm9ySucveA8/TEYgGu9DIgI/AAAAAAAAAO4/XI1q38FFlxw/s1600/unicorns2q.jpg
 
 # crop example
-http://<dims-host>:8080/crop/200x200/http://4.bp.blogspot.com/_nm9ySucveA8/TEYgGSJi7sI/AAAAAAAAAOw/XK4VjrHPybw/s1600/unicorns-5-magical-animal.jpg
+http://<dims-host>/crop/200x200/http://4.bp.blogspot.com/_nm9ySucveA8/TEYgGSJi7sI/AAAAAAAAAOw/XK4VjrHPybw/s1600/unicorns-5-magical-animal.jpg
 
 # rotate example
-http://<dims-host>:8080/rotate/90/http://3.bp.blogspot.com/_nm9ySucveA8/TEYgGF9iEWI/AAAAAAAAAOo/uC62nczWcEk/s1600/unicorn1.jpg
-```
+http://<dims-host>/rotate/90/http://3.bp.blogspot.com/_nm9ySucveA8/TEYgGF9iEWI/AAAAAAAAAOo/uC62nczWcEk/s1600/unicorn1.jpg
+
