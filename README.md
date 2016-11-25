@@ -17,11 +17,6 @@ Setup (using Ubuntu)
 2. SSH into the machine and run the following commands:
 
 ``` bash
-# When you log into the server from the terminal run these commands
-sudo mkdir /mnt/media/   # Or whatever you want the server root to be
-sudo chown ubuntu:ubuntu /mnt/media
-chmod 777 /mnt/media
-
 sudo apt-get install nginx-extras-dbg
 # if you get an error uncomment the offending lines in this file and try to reinstall nginx again
 # sudo vim /etc/apt/sources.list
@@ -33,7 +28,7 @@ sudo /etc/init.d/nginx restart
 *That's it!*
 
 
-Setup (using Docker)
+Setup (using Docker Alpine)
 =====
 
 Just run the docker container ondra42/dimwit with Port 80:
