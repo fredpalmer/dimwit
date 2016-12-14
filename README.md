@@ -50,8 +50,9 @@ http://<dims-host>/crop/200x150/https://encrypted-tbn3.gstatic.com/images?q=tbn:
 
 # rotate example
 http://<dims-host>/rotate/90/http://3.bp.blogspot.com/_nm9ySucveA8/TEYgGF9iEWI/AAAAAAAAAOo/uC62nczWcEk/s1600/unicorn1.jpg
+```
+
 
 Security
 =======
-```
 Support whitelist domain in securytt security.conf. By default disabled.
