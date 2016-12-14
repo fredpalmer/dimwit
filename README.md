@@ -21,8 +21,9 @@ sudo apt-get install nginx-extras-dbg
 # if you get an error uncomment the offending lines in this file and try to reinstall nginx again
 # sudo vim /etc/apt/sources.list
 
-curl -O https://raw.githubusercontent.com/fredpalmer/dimwit/develop/nginx.conf
-sudo mv nginx.conf /etc/nginx/sites-enabled/
+git clone https://github.com/OndrejP/dimwit
+sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.preDimwit
+sudo cp dimwit/*.conf /etc/nginx/
 sudo /etc/init.d/nginx restart
 ```
 *That's it!*
@@ -32,10 +33,6 @@ Setup (using Docker Alpine)
 =====
 
 Just run the docker container ondra42/dimwit with Port 80:
-```
-docker run -d -p 8080:80 ondrejp/dimwit
-```
-
 ```
 docker run -d -p 8080:80 ondrejp/dimwit
 ```
@@ -54,3 +51,7 @@ http://<dims-host>/crop/200x150/https://encrypted-tbn3.gstatic.com/images?q=tbn:
 # rotate example
 http://<dims-host>/rotate/90/http://3.bp.blogspot.com/_nm9ySucveA8/TEYgGF9iEWI/AAAAAAAAAOo/uC62nczWcEk/s1600/unicorn1.jpg
 
+Security
+=======
+```
+Support whitelist domain in securytt security.conf. By default disabled.
