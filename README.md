@@ -60,4 +60,4 @@ http://<dims-host>/rotate/90/http://3.bp.blogspot.com/_nm9ySucveA8/TEYgGF9iEWI/A
 
 Security
 =======
-Support whitelist domain in securytt security.conf. By default disabled.
+Support domain whitelist in security.conf. By default disabled.
