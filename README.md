@@ -10,6 +10,19 @@ Uses the [HttpImageFilterModule](http://nginx.org/en/docs/http/ngx_http_image_fi
 Derivative images are created only once per unique url and stored locally.  Duplicate requests are served directly from disk.
 
 
+Processing procedure
+=========
+![dimwit](https://cloud.githubusercontent.com/assets/1157443/21215185/ccdeda48-c29f-11e6-8800-c4afbc8acbb8.png)
+
+
+Setup (using Docker Alpine)
+=====
+
+Just run the docker container ondra42/dimwit with Port 80:
+```
+docker run -d -p 8080:80 ondrejp/dimwit
+```
+
 Setup (using Ubuntu)
 =======
 1.  Launch a server, e.g. *Ubuntu Server 14.04 LTS*.  Nothing special except you need ports 22 (to login via ssh) and 8080 to run the service.
@@ -28,14 +41,6 @@ sudo /etc/init.d/nginx restart
 ```
 *That's it!*
 
-
-Setup (using Docker Alpine)
-=====
-
-Just run the docker container ondra42/dimwit with Port 80:
-```
-docker run -d -p 8080:80 ondrejp/dimwit
-```
 
 Usage
 =======
